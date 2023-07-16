@@ -39,6 +39,38 @@
         "chunks": [],
         "async": false
       }
+    },
+    "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/controlComponents.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/controlComponents.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/uiComponents.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/uiComponents.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/hooks.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/hooks.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/@clerk/nextjs/dist/esm/app-router/client/ClerkProvider.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/@clerk/nextjs/dist/esm/app-router/client/ClerkProvider.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
@@ -123,11 +155,35 @@
       ],
       "async": false
     },
-    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\globals.css": {
-      "id": "(app-client)/./app/globals.css",
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\node_modules\\@clerk\\nextjs\\dist\\esm\\client-boundary\\controlComponents.js": {
+      "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/controlComponents.js",
       "name": "*",
       "chunks": [
-        "app/layout:static/chunks/app/layout.js"
+        "app/(root)/page:static/chunks/app/(root)/page.js"
+      ],
+      "async": false
+    },
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\node_modules\\@clerk\\nextjs\\dist\\esm\\client-boundary\\uiComponents.js": {
+      "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/uiComponents.js",
+      "name": "*",
+      "chunks": [
+        "app/(root)/page:static/chunks/app/(root)/page.js"
+      ],
+      "async": false
+    },
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\node_modules\\@clerk\\nextjs\\dist\\esm\\client-boundary\\hooks.js": {
+      "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/hooks.js",
+      "name": "*",
+      "chunks": [
+        "app/(root)/page:static/chunks/app/(root)/page.js"
+      ],
+      "async": false
+    },
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\node_modules\\@clerk\\nextjs\\dist\\esm\\app-router\\client\\ClerkProvider.js": {
+      "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/app-router/client/ClerkProvider.js",
+      "name": "*",
+      "chunks": [
+        "app/(root)/page:static/chunks/app/(root)/page.js"
       ],
       "async": false
     },
@@ -138,9 +194,19 @@
         "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
+    },
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\globals.css": {
+      "id": "(app-client)/./app/globals.css",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
     }
   },
   "entryCSSFiles": {
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\(auth)\\(routes)\\sign-in\\[[...sign-in]]\\page": [],
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\(auth)\\layout": [],
     "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\layout": [
       "static/css/app/layout.css"
     ],
