@@ -40,6 +40,14 @@
         "async": false
       }
     },
+    "(app-client)/./app/(root)/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./app/(root)/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/controlComponents.js": {
       "*": {
         "id": "(sc_client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/controlComponents.js",
@@ -155,11 +163,19 @@
       ],
       "async": false
     },
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\(root)\\page.tsx": {
+      "id": "(app-client)/./app/(root)/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(root)/page:static/chunks/app/(root)/page.js"
+      ],
+      "async": false
+    },
     "D:\\project\\next\\large-ecom\\ecommerce-admin\\node_modules\\@clerk\\nextjs\\dist\\esm\\client-boundary\\controlComponents.js": {
       "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/controlComponents.js",
       "name": "*",
       "chunks": [
-        "app/(root)/page:static/chunks/app/(root)/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -167,7 +183,7 @@
       "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/uiComponents.js",
       "name": "*",
       "chunks": [
-        "app/(root)/page:static/chunks/app/(root)/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -175,7 +191,7 @@
       "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/client-boundary/hooks.js",
       "name": "*",
       "chunks": [
-        "app/(root)/page:static/chunks/app/(root)/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -183,7 +199,7 @@
       "id": "(app-client)/./node_modules/@clerk/nextjs/dist/esm/app-router/client/ClerkProvider.js",
       "name": "*",
       "chunks": [
-        "app/(root)/page:static/chunks/app/(root)/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -205,11 +221,9 @@
     }
   },
   "entryCSSFiles": {
-    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\(auth)\\(routes)\\sign-in\\[[...sign-in]]\\page": [],
-    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\(auth)\\layout": [],
+    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\(root)\\page": [],
     "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\layout": [
       "static/css/app/layout.css"
-    ],
-    "D:\\project\\next\\large-ecom\\ecommerce-admin\\app\\(root)\\page": []
+    ]
   }
 }
