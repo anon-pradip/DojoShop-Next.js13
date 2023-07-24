@@ -5,6 +5,9 @@ import * as z from "zod";
 import { Trash } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { useParams, useRouter } from "next/navigation";
 
 import { Store } from "@prisma/client";
 import Heading from "@/components/ui/heading";
@@ -16,6 +19,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
@@ -32,8 +36,8 @@ type SettingsFormValues = z.infer<typeof formSchema>;
 const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  console.log(initialData);
+  const params = useParams();
+  const router = useRouter();
 
   const form = useForm<SettingsFormValues>({
     resolver: zodResolver(formSchema),
@@ -41,14 +45,28 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
   });
 
   const onSubmit = async (data: SettingsFormValues) => {
-    console.log(data);
+    try {
+      setLoading(true);
+      await axios.patch(`/api/stores/${params.storeId}`, data);
+      router.refresh();
+      toast.success("Store updated.");
+    } catch (error) {
+      toast.error("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
       <div className="flex justify-between items-center">
         <Heading title="Settings" description="Manage store preferences" />
-        <Button variant={"destructive"} size={"icon"} onClick={() => {}}>
+        <Button
+          variant={"destructive"}
+          size={"icon"}
+          onClick={() => setOpen(true)}
+          disabled={loading}
+        >
           <Trash className="h-4 w-4" />
         </Button>
       </div>
@@ -72,6 +90,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
                       {...field}
                     />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
