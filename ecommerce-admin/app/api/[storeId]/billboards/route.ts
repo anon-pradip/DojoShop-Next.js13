@@ -26,10 +26,14 @@ export async function POST(
       return new NextResponse("ImageUrl is required", { status: 400 });
     }
 
-    const storeByUserId = await prismadb.store.findUnique({
+    if (!storeId) {
+      return new NextResponse("Store id is required", { status: 400 });
+    }
+
+    const storeByUserId = await prismadb.store.findFirst({
       where: {
-        userId,
         id: storeId,
+        userId,
       },
     });
 

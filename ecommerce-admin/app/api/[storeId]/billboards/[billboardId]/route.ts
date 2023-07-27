@@ -92,7 +92,7 @@ export const DELETE = async (
       return new NextResponse("Billborad id is required", { status: 400 });
     }
 
-    const storeByUserId = await prismadb.store.findUnique({
+    const storeByUserId = await prismadb.store.findFirst({
       where: {
         userId,
         id: params.storeId,
