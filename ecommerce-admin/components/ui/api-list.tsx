@@ -3,11 +3,6 @@ import ApiAlert from "./api-alert";
 import { useParams } from "next/navigation";
 import { useOrigin } from "@/hooks/use-origin";
 
-// type Props = {
-//   entityName: string;
-//   entityIdName: string;
-// };
-
 interface ApiListProps {
   entityName: string;
   entityIdName: string;
@@ -29,7 +24,7 @@ const ApiList: React.FC<ApiListProps> = ({ entityIdName, entityName }) => {
       <ApiAlert
         title="GET"
         variant="public"
-        description={`${baseUrl}/${entityName}/${entityIdName}`}
+        description={`${baseUrl}/${entityName}/{${entityIdName}}`}
       />
       <ApiAlert
         title="POST"
@@ -39,12 +34,12 @@ const ApiList: React.FC<ApiListProps> = ({ entityIdName, entityName }) => {
       <ApiAlert
         title="PATCH"
         variant="admin"
-        description={`${baseUrl}/${entityName}/${entityIdName}`}
+        description={`${baseUrl}/${entityName}/{${entityIdName}}`}
       />
       <ApiAlert
         title="DELETE"
         variant="admin"
-        description={`${baseUrl}/${entityName}/${entityIdName}`}
+        description={`${baseUrl}/${entityName}/{${entityIdName}}`}
       />
     </>
   );
