@@ -56,13 +56,49 @@ const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
     },
   });
 
+  const onSubmit = async (data: SizeFormValues) => {
+    try {
+      setLoading(true);
+      if (initialData) {
+        await axios.patch(
+          `/api/${params.storeId}/sizes/${params.sizeId}`,
+          data
+        );
+      } else {
+        await axios.post(`/api/${params.storeId}/sizes`, data);
+      }
+      router.refresh();
+      router.push(`/${params.storeId}/sizes`);
+      toast.success(toastMessage);
+    } catch (error) {
+      toast.error("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const onDelete = async () => {
+    try {
+      setLoading(true);
+      await axios.delete(`/api/${params.storeId}/sizes/${params.sizeId}`);
+      router.refresh();
+      router.push(`/${params.storeId}/sizes`);
+      toast.success("Size deleted.");
+    } catch (error) {
+      toast.error("Make sure you removed all products using this size first.");
+    } finally {
+      setLoading(false);
+      setOpen(false);
+    }
+  };
+
   return (
     <>
       <AlertModal
         isOpen={open}
         loading={loading}
         onClose={() => setOpen(false)}
-        onConfirm={() => {}}
+        onConfirm={onDelete}
       />
       <div className="flex justify-between items-center">
         <Heading title={title} description={description} />
@@ -79,7 +115,10 @@ const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
       </div>
       <Separator />
       <Form {...form}>
-        <form onSubmit={() => {}} className="space-y-5 w-full">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-5 w-full"
+        >
           <div className="grid grid-cols-3 gap-8">
             <FormField
               control={form.control}
