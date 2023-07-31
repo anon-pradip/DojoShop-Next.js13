@@ -90,7 +90,7 @@ const BillboardForm: React.FC<BillboardformProps> = ({ initialData }) => {
       toast.success("Billboard deleted.");
     } catch (error) {
       toast.error(
-        "Make sure you removed all categories using this bilboard first."
+        "Make sure you removed all categories using this billboard first."
       );
     } finally {
       setLoading(false);
