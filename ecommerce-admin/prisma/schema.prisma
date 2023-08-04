@@ -89,8 +89,8 @@ model Product {
   isArchived Boolean @default(false)
   sizeId String
   size Size @relation(fields: [sizeId], references: [id])
-  colorID String
-  color Color @relation(fields: [colorID], references: [id])
+  colorId String
+  color Color @relation(fields: [colorId], references: [id])
   images Image[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -98,7 +98,7 @@ model Product {
   @@index([categoryId])
   @@index([sizeId])
   @@index([storeId])
-  @@index([colorID])
+  @@index([colorId])
 }
 
 // since product is going to have multiple images, it is necessary to have a separate model for images
