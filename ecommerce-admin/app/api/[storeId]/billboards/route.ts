@@ -61,11 +61,10 @@ export async function GET(
   { params }: { params: { storeId: string } }
 ) {
   try {
-    const { userId } = auth();
     const { storeId } = params;
 
-    if (!userId) {
-      return new NextResponse("Unauthenticated", { status: 401 });
+    if (!storeId) {
+      return new NextResponse("Store id is required", { status: 400 });
     }
 
     const billboards = await prismadb.billboard.findMany({

@@ -61,12 +61,7 @@ export async function GET(
   { params }: { params: { storeId: string } }
 ) {
   try {
-    const { userId } = auth();
     const { storeId } = params;
-
-    if (!userId) {
-      return new NextResponse("Unauthenticated", { status: 401 });
-    }
 
     const categories = await prismadb.category.findMany({
       where: {

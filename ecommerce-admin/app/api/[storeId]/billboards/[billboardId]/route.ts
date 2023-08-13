@@ -34,7 +34,7 @@ export const PATCH = async (
     const { label, imageUrl } = body;
 
     if (!userId) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized: no user id", { status: 401 });
     }
 
     if (!label) {
