@@ -21,7 +21,6 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      Billboard
     </div>
   );
 };
