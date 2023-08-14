@@ -4,6 +4,7 @@ import React from "react";
 
 import IconButton from "@/components/ui/icon-button";
 import { Expand, ShoppingCart } from "lucide-react";
+import Currency from "@/components/ui/currency";
 
 interface ProductCardProps {
   data: Product;
@@ -12,6 +13,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   return (
     <div className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
+      {/* Images and Actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
           src={data.images?.[0]?.url}
@@ -31,6 +33,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
             />
           </div>
         </div>
+      </div>
+
+      {/* Description */}
+      <div className="">
+        <p className="text-lg font-semibold">{data.name}</p>
+        <p className=" text-sm text-gray-500">{data.category?.name}</p>
+      </div>
+
+      {/* Price */}
+      <div className="flex justify-between items-center">
+        <Currency value={data?.price} />
       </div>
     </div>
   );
