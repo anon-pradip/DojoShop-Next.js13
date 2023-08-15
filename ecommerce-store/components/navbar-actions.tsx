@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Button from "@/components/ui/button";
+import { ShoppingCart } from "lucide-react";
 
 const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -17,7 +18,7 @@ const NavbarActions = () => {
   return (
     <div className="ml-auto flex items-center gap-x-4">
       <Button className="flex items-center rounded-full bg-black px-4 py-2 text-white">
-        actions
+        <ShoppingCart size={20} />
         <span className="ml-2 text-sm font-medium text-white">0</span>
       </Button>
     </div>
