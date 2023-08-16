@@ -1,9 +1,8 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
 
-import CellAction from "./cell-action";
+import { CellAction } from "./cell-action";
 
 export type ProductColumn = {
   id: string;
@@ -12,9 +11,9 @@ export type ProductColumn = {
   category: string;
   size: string;
   color: string;
+  createdAt: string;
   isFeatured: boolean;
   isArchived: boolean;
-  createdAt: string;
 };
 
 export const columns: ColumnDef<ProductColumn>[] = [
@@ -46,7 +45,7 @@ export const columns: ColumnDef<ProductColumn>[] = [
     accessorKey: "color",
     header: "Color",
     cell: ({ row }) => (
-      <div className=" flex items-center gap-x-2">
+      <div className="flex items-center gap-x-2">
         {row.original.color}
         <div
           className="h-6 w-6 rounded-full border"
