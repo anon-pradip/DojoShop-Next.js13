@@ -3,6 +3,8 @@ import React from "react";
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
 
+export const revalidate = 0;
+
 interface ProductListProps {
   title: string;
   items: Product[];
