@@ -9,6 +9,8 @@ import { getTotalRevenue } from "@/actions/get-total-revenue";
 import { formatter } from "@/lib/utils";
 import { getSalesCount } from "@/actions/get-sales-count";
 import { getStockCount } from "@/actions/get-stock-count";
+import Overview from "@/components/overview";
+import { getGraphRevenue } from "@/actions/get-revenue";
 
 interface DashboardPageProps {
   params: { storeid: string };
@@ -18,6 +20,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({ params }) => {
   const totalRevenue = await getTotalRevenue(params.storeid);
   const salesCount = await getSalesCount(params.storeid);
   const stocksCount = await getStockCount(params.storeid);
+  const graphRevenue = await getGraphRevenue(params.storeid);
 
   return (
     <div className="flex flex-col">
@@ -56,6 +59,14 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({ params }) => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{stocksCount}</div>
+            </CardContent>
+          </Card>
+          <Card className="col-span-4">
+            <CardHeader>
+              <CardTitle>Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="pl-2">
+              <Overview data={graphRevenue} />
             </CardContent>
           </Card>
         </div>
