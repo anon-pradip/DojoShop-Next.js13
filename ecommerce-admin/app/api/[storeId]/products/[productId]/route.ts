@@ -25,7 +25,7 @@ export const GET = async (
 
     return NextResponse.json(product);
   } catch (error) {
-    console.log("[PRODUCTS_GET]", error);
+    console.log("[PRODUCT_GET]", error);
     return new NextResponse("Internal error", { status: 500 });
   }
 };
@@ -101,6 +101,9 @@ export const PATCH = async (
         categoryId,
         colorId,
         sizeId,
+        images: {
+          deleteMany: {},
+        },
         isFeatured,
         isArchived,
       },
